@@ -1,0 +1,261 @@
+﻿<html>
+
+<head>
+    <title>
+        NightmareStudio - EndlessFire
+    </title>
+
+    <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+    <style>
+
+      
+    </style>
+</head>
+
+<body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+    <script>
+
+        var index = 0;
+        var texts = ["EndlessFire! (v0.0.7 Alpha) - 2021", "EndlessFire! (v0.0.7 Alpha) - 2021",
+            "EndlessFire! (v0.0.7 Alpha) - 2021", "EndlessFire! (v0.0.7 Alpha) - 2021", "EndlessFire! (v0.0.7 Alpha) - 2021", "EndlessFire! (v0.0.7 Alpha) - 2021",
+            "EndlessFire! (v0.0.5 Alpha) - 2020", "EndlessFire! (v0.0.5 Alpha) - 2020", "EndlessFire! (v0.0.5 Alpha) - 2020", "EndlessFire! (v0.0.5 Alpha) - 2020", "EndlessFire! (v0.0.5 Alpha) - 2020",
+            "EndlessFire! (v0.0.1 Alpha) - 2020", "EndlessFire! (v0.0.1 Alpha) - 2020",
+            "EndlessFire! (v0.0.1 Alpha) - 2020"];
+
+        function Start() {
+            //showSlide(0);
+        }
+
+        function showSlide(slide) {
+
+            var slides = document.getElementsByClassName("slide");
+
+            index += slide;
+
+            if (index >= 0 && index < slides.length) {
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slides[index].style.display = "block";
+                text.innerText = texts[index];
+            } else {
+                index -= slide;
+            }
+        }
+
+    </script>
+
+    <div style="position:relative;">
+        <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Home
+            </button>
+        }
+
+        @using (Html.BeginForm("About", "About"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                About
+            </button>
+        }
+
+        @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+        {
+            <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                <button id="projectsBotton"
+                        name="Project"
+                        value="Projects"
+                        style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                    Projects
+                </button>
+
+                <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                    <button name="Project"
+                            value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">JustJump</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheWalls</font>
+                    </button>
+
+                    <button name="Project"
+                            value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">EndlessFire</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheBean</font>
+                    </button>
+
+                    <button name="Project"
+                            value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">LevelDesign</font>
+                    </button>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Contact", "Contact"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Contact
+            </button>
+        }
+
+        @using (Html.BeginForm("Media", "Media"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Media
+            </button>
+        }
+
+        @using (Html.BeginForm("Download", "Download"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Downloads
+            </button>
+        }
+
+        <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+    </div>
+
+
+    <div align="center" style="position:relative">
+
+
+        @*Projects*@
+
+        <div style="position:absolute; bottom:50px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; EndlessFire (Alpha)
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-700px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;EndlessFire is an indie 3D First-Person Shooter game/FPS game(semi-survival,lowpoly and offline/singleplayer),created by one person with UnityEngine.
+                In this game you are a soldier who has to do different special missions.
+                You will complete these missions with the help of items and weapons that you will find on the map.
+                During the missions you will encounter enemies who want to kill you. For this reason you will have to defend yourself with the weapons you will find in the game.
+                The missions will take place on a territory full of enemy military bases.
+                The game has a simple, low poly, "flat" graphics, consumes few resources (500MB VRAM and 300 MB RAM), takes up little storage space, is well optimized and runs on old systems.
+                <br>
+                &emsp;The game is free, unofficial (alpha), and can be downloaded from the Itch.io:
+                <a href="https://nightmarestudio.itch.io/endlessfire" target="_blank" style="color:white; text-decoration:none"><b>EndlesssFire(Alpha) - Itch.io</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 0.0.7 Alpha</li>
+                    <li>Age: 12</li>
+                    <li>Category: Action</li>
+                    <li>Reviews: 5,0/5,0</li>
+                    <li>Downloads: 171</li>
+                    <li>Windows version: Windows 7 32bit - the newest</li>
+                    <li>Size: 200MB</li>
+                    <li>Last update: 16.3.2021 </li>
+                    <li>Release date: 4.4.2020 (version: 0.0.1 Alpha)</li>
+                    <li>Project status: in development (the game will receive updates)</li>
+                    <li>Game status: alpha</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+            <div style="position:absolute; width:875px; height:500px; bottom:-627.5px; left:1020px; text-align:center;">
+
+                <div style="position:absolute; background-color:white; opacity:0.2; width:875px; height:500px; bottom:0px; left:0px; text-align:center;"></div>
+
+                <div style="position:absolute; width:500px; height:500px; z-index:2; left:0px; right:0px; margin-left:auto; margin-right:auto;
+                bottom:0px; top:0px; margin-top:auto; margin-bottom:auto; text-align:center;">
+
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire1.jpg" style="display:block"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire2.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire3.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire4.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire5.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire6.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire7.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire8.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire9.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire10.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire11.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire12.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire13.jpg" style="display: none"/>
+                    <img class="slide" align="middle" src="~/Content/Images/endlessfire14.jpg" style="display: none"/>
+
+                    <font id="text" color="black" face="arial" size="5" style="position:absolute; font-weight: bold; text-align:center; left:0px; right:0px; margin-left:auto; margin-right:auto; bottom:10px;">
+                        EndlessFire! (v0.0.7 Alpha) - 2021
+                    </font>
+
+                </div>
+
+                <input type="image" src="~/Content/Images/arrow.png"
+                       onclick="showSlide(1)"
+                       style="position:absolute; outline:none; width:50px; height:50px; z-index:4;  left:-800px; right:0px; margin-left:auto; margin-right:auto; bottom:0px; top:0px; margin-bottom:auto; margin-top:auto;" />
+
+                <input type="image" src="~/Content/Images/arrow.png"
+                       onclick="showSlide(-1)"
+                       style="position:absolute; outline:none; transform:scale(-1);  width:50px; height:50px; z-index:4;  left:0px; right:-800px; margin-left:auto; margin-right:auto; bottom:0px; top:0px; margin-bottom:auto; margin-top:auto;" />
+
+            </div>
+
+        </div>
+     
+    </div>
+</body>
+
+</html>

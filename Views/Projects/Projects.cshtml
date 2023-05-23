@@ -1,0 +1,368 @@
+﻿<html>
+
+<head>
+    <title>
+        NightmareStudio - Projects
+    </title>
+
+    <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+    <script>
+
+        function Start() {
+         
+        }
+
+    </script>
+
+    <div style="position:relative;">
+        <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Home
+            </button>
+        }
+
+        @using (Html.BeginForm("About", "About"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                About
+            </button>
+        }
+
+        @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+        {
+            <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                <button id="projectsBotton"
+                        name="Project"
+                        value="Projects"
+                        style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                    Projects
+                </button>
+
+                <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                    <button name="Project"
+                            value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">JustJump</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheWalls</font>
+                    </button>
+
+                    <button name="Project"
+                            value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">EndlessFire</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheBean</font>
+                    </button>
+
+                    <button name="Project"
+                            value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">LevelDesign</font>
+                    </button>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Contact", "Contact"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Contact
+            </button>
+        }
+
+        @using (Html.BeginForm("Media", "Media"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Media
+            </button>
+        }
+
+        @using (Html.BeginForm("Download", "Download"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Downloads
+            </button>
+        }
+
+        <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+    </div>
+
+
+    <div align="center" style="position:relative">
+
+        <font color="white" face="arial" style="font-size:50px; position:absolute; left:15px; bottom:-75px;">
+            <b>
+                ◉ Projects
+            </b>
+        </font>
+
+        <hr color="#ffffff" style="position:absolute; height:5px; width:1000px; left:10px; bottom:-95px" />
+
+        @*Projects*@
+
+        <div style="position: absolute; bottom: 0px ">
+
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; JustJump!
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-650px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;Just Jump! is a simple 3D mobile game with low poly graphics, from the category of arcade games. In this game you have to jump with a cube on different platforms until the end of the level.
+                The game has over 75 levels and many skins for your cube. The levels are short and simple, some of them being special. With the pennies and precious stones collected you can buy chests and skins for your cube.
+                The game consumes few resources (works on weak phones) and takes up little storage space.
+
+                <br>
+                &emsp;The game is free, official, and can be downloaded from the Play Store:
+                <a href="https://play.google.com/store/apps/details?id=com.Lybra.JustJump" target="_blank" style="color:white; text-decoration:none"><b>JustJump! - PlayStore</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 2.2</li>
+                    <li>Age: PEGI 3</li>
+                    <li>Category: Arcade</li>
+                    <li>Reviews: 4,9/5,0</li>
+                    <li>Downloads: 448</li>
+                    <li>Android version: 4.4 - the newest</li>
+                    <li>Size: 39MB</li>
+                    <li>Last update: 15.5.2020 </li>
+                    <li>Release date: 21.12.2018 (version: 1.0)</li>
+                    <li>Project status: ended (there will be no more updates)</li>
+                    <li>Game status: released,official</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+            <img class="galleryImage1Projects" src="~/Content/Images/JustJump1.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage2Projects" src="~/Content/Images/JustJump2.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage3Projects" src="~/Content/Images/JustJump3.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage4Projects" src="~/Content/Images/JustJump4.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+
+        </div>
+
+        <div style="position:absolute; bottom:-750px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; TheWalls (beta)
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-650px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;The Walls is a 3D FPS game, with low poly graphics, in the category of shooter and action games.
+                In this game you are on a territory between four huge walls. This territory is guarded by enemies whose purpose is to kill you.
+                For this reason you have to get different resources and weapons to survive. Your goal in this game is to escape outside the walls.
+                The game is survival and shooter and does not require internet connection (it is singleplayer, offline).
+                It takes up little storage space and is well optimized.
+
+                <br>
+                &emsp;The game is free, unofficial (beta), and can be downloaded from the Play Store:
+                <a href="https://play.google.com/store/apps/details?id=com.Lybra.TheWalls" target="_blank" style="color:white; text-decoration:none"><b>TheWalls(beta) - PlayStore</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 0.8.5 beta</li>
+                    <li>Age: PEGI 7</li>
+                    <li>Category: Action</li>
+                    <li>Reviews: 4,8/5,0</li>
+                    <li>Downloads: 1191</li>
+                    <li>Android version: 5.0.0 - the newest</li>
+                    <li>Size: 32MB</li>
+                    <li>Last update: 31.1.2020 </li>
+                    <li>Release date: 16.3.2019 (version: 0.1 beta)</li>
+                    <li>Project status: ended (there will be no more updates)</li>
+                    <li>Game status: beta</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+            <img class="galleryImage1Projects" src="~/Content/Images/thewalls1.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage2Projects" src="~/Content/Images/thewalls2.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage3Projects" src="~/Content/Images/thewalls3.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage4Projects" src="~/Content/Images/thewalls4.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+
+        </div>
+
+        <div style="position:absolute; bottom:-1500px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; EndlessFire (Alpha)
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-700px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;EndlessFire is an indie 3D First-Person Shooter game/FPS game(semi-survival,lowpoly and offline/singleplayer),created by one person with UnityEngine.
+                In this game you are a soldier who has to do different special missions.
+                You will complete these missions with the help of items and weapons that you will find on the map.
+                During the missions you will encounter enemies who want to kill you. For this reason you will have to defend yourself with the weapons you will find in the game.
+                The missions will take place on a territory full of enemy military bases.
+                The game has a simple, low poly, "flat" graphics, consumes few resources (500MB VRAM and 300 MB RAM), takes up little storage space, is well optimized and runs on old systems.
+                <br>
+                &emsp;The game is free, unofficial (alpha), and can be downloaded from the Itch.io:
+                <a href="https://nightmarestudio.itch.io/endlessfire" target="_blank" style="color:white; text-decoration:none"><b>EndlesssFire(Alpha) - Itch.io</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 0.0.7 Alpha</li>
+                    <li>Age: 12</li>
+                    <li>Category: Action</li>
+                    <li>Reviews: 5,0/5,0</li>
+                    <li>Downloads: 171</li>
+                    <li>Windows version: Windows 7 32bit - the newest</li>
+                    <li>Size: 200MB</li>
+                    <li>Last update: 16.3.2021 </li>
+                    <li>Release date: 4.4.2020 (version: 0.0.1 Alpha)</li>
+                    <li>Project status: in development (the game will receive updates)</li>
+                    <li>Game status: alpha</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+            <img class="galleryImage1Projects" src="~/Content/Images/endlessfire1.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage2Projects" src="~/Content/Images/endlessfire2.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage3Projects" src="~/Content/Images/endlessfire3.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage4Projects" src="~/Content/Images/endlessfire4.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+
+        </div>
+
+        <div style="position:absolute; bottom:-2250px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; The Bean (Beta)
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-650px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;The Bean is an indie First-Person Shooter game/FPS game(lowpoly and offline/singleplayer),created by one person with UnityEngine.
+                In this game you are a bean that you have to survive as many waves as possible ... it's simple
+                <br>
+                &emsp;The game is free, unofficial (beta), and can be downloaded from the Itch.io:
+                <a href="https://nightmarestudio.itch.io/the-bean" target="_blank" style="color:white; text-decoration:none"><b>TheBean(Beta) - Itch.io</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 0.2 Beta</li>
+                    <li>Age: 12</li>
+                    <li>Category: Action</li>
+                    <li>Reviews: 5,0/5,0</li>
+                    <li>Downloads: 36</li>
+                    <li>Windows version: Windows 7 32bit - the newest</li>
+                    <li>Size: 100MB</li>
+                    <li>Last update: 13.6.2021 </li>
+                    <li>Release date: 1.9.2021 (version: 0.1 Beta)</li>
+                    <li>Project status: in development (the game will receive updates)</li>
+                    <li>Game status: beta</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+            <img class="galleryImage1Projects" src="~/Content/Images/thebean1.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage2Projects" src="~/Content/Images/thebean2.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage3Projects" src="~/Content/Images/thebean3.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage4Projects" src="~/Content/Images/thebean4.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+
+        </div>
+
+        <div style="position:absolute; bottom:-3000px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; Level design
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-300px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;Level design in Unity (built in render pipeline and free assets)
+                <br>
+                &emsp;More information about level design can be found on ArtStation:
+                <a href="https://www.artstation.com/nightmarestudio828" target="_blank" style="color:white; text-decoration:none"><b>Nightmare Studio</b></a>
+                <br>
+            </font>
+
+            @*Project images*@
+
+            <img class="galleryImage1Projects" src="~/Content/Images/ld_1.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage2Projects" src="~/Content/Images/ld_2.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage3Projects" src="~/Content/Images/ld_3.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+            <img class="galleryImage4Projects" src="~/Content/Images/ld_4.jpg" style="position:absolute; width:360px; height:200px; border:2px solid #ffffff" />
+
+        </div>
+
+
+        <hr color="#ffffff" style="height:4px; width:100%; position:absolute; bottom:-4000px;" />
+    </div>
+</body>
+
+</html>

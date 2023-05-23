@@ -1,0 +1,98 @@
+﻿@model Model.Account
+@using Model
+
+<html>
+
+<head>
+    <title>NightmareStudio Login</title>
+
+    <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<body background="\Content\Images\Background.jpg" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+
+    <script>
+
+    </script>
+
+
+    <div style="position:relative;">
+
+        <img src="~/Content/Images/Image_Black.jpg" width="500" height="750" style="border:2px solid #fff; opacity:0.7; position:absolute; left:0px;right:0; margin-left:auto; margin-right:auto; bottom:-825px" />
+        <font face="arial" style="position: absolute; bottom:-150px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:white; font-size:40px;"><b>Edit Profile</b></font>
+
+
+        @using (Html.BeginForm("SaveProfile", "Home", FormMethod.Post))
+        {
+            <button style="position:absolute;
+                        bottom:-600px;
+                       left:0px;right:0; margin-left:auto; margin-right:auto;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:275px;
+                        height:50px;
+                        ">
+                <font face="arial" style="font-size:25px">Save</font>
+            </button>
+
+            @Html.TextBoxFor(m => m.username_, new { @class = "usernameEditProfile_input" })
+            @Html.TextBoxFor(m => m.password_, new { @class = "passwordEditProfile_input" })
+            @Html.TextBoxFor(m => m.email_, new { @class = "emailEditProfile_input" })
+        }
+
+        @using (Html.BeginForm("DeleteProfile", "Home"))
+        {
+            <button style="position:absolute;
+                        bottom:-675px;
+                        left:0px;right:0; margin-left:auto; margin-right:auto;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:275px;
+                        height:50px;
+                        ">
+                <font face="arial" style="font-size:25px">Delete Account</font>
+            </button>
+        }
+
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button style="position:absolute;
+                        bottom:-750px;
+                        left:0px;right:0; margin-left:auto; margin-right:auto;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:275px;
+                        height:50px;
+                        ">
+                <font face="arial" style="font-size:25px">Home</font>
+            </button>
+        }
+
+
+        <font face="arial" style="position: absolute; bottom:-215px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:white; font-size:25px;">
+            <b>Username: @Account.username</b>
+        </font>
+
+        <font face="arial" style="position: absolute; bottom:-315px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:white; font-size:25px;">
+            <b>Password: @Account.password</b>
+        </font>
+
+        <font face="arial" style="position: absolute; bottom:-415px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:white; font-size:25px;">
+            <b>Email: @Account.email</b>
+        </font>
+
+        @{
+            if (Account.editProfileError)
+            {
+                <font face="arial" style="position: absolute; bottom:-515px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:red; font-size:20px;"><b>Error: Wrong username,password or email</b></font>
+            }
+        }
+
+    </div>
+
+</body>
+
+</html>

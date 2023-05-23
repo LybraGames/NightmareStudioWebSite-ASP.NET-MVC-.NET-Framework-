@@ -1,0 +1,321 @@
+﻿@using Model
+@using Account = Model.Account
+
+<html>
+
+    <head>
+
+        <title>
+            NightmareStudio
+        </title>
+
+        <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+        <script>
+
+            @{
+                if (!SQL_local_db.isInit)
+                {
+                    SQL_local_db.Init();
+                }
+            }
+
+            function Start() {
+              
+            }
+
+        </script>
+
+        <div style="position:relative;">
+
+            <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+
+
+            @if (!Account.isLogin)
+            {
+                <img src="~/Content/Images/Image_Black.jpg" width="230" height="40" style="border:1.75px solid #fff; z-index:-1; opacity:0.5; position:absolute; bottom:-50px; left:1510px" />
+
+                using (Html.BeginForm("Login", "Home"))
+                {
+                    <button class="zoom" style="position:absolute;
+                            bottom:-40px;
+                            left:1520px;
+                            border:1.75px solid #fff;
+                            background-color:#131320;
+                            color:white;
+                            width:96px;
+                            height:24px;
+                            z-index:2">
+                        Log in
+                    </button>
+                }
+
+                using (Html.BeginForm("Register", "Home"))
+                {
+                    <button class="zoom" style="position:absolute;
+                            bottom:-40px;
+                            left:1640px;
+                            border:1.75px solid #fff;
+                            background-color:#131320;
+                            color:white;
+                            width:96px;
+                            height:24px;
+                            z-index:2">
+                        Register
+                    </button>
+                }
+            }
+            else
+            {
+
+                using (Html.BeginForm("UserProfile", "Home"))
+                {
+                    if (!Account.isPremium)
+                    {
+                        <input type="image" src="~/Content/Images/AccountIcon.jpg" style="position:absolute; left:1450px; height:35px; width:35px; bottom:-46px;" />
+                    }
+                    else
+                    {
+                        <input type="image" src="~/Content/Images/AccountIcon.jpg" style="position:absolute; left:1450px; height:35px; width:35px; bottom:-46px;  outline: 2px solid yellow;" />
+                    }
+                }
+
+                if (!Account.isPremium)
+                {
+                    <font face="arial" style="position: absolute;  bottom:-36px; left:1520px; color:white; font-size:15px;"><b>@Account.username  </b></font>
+                }
+                else
+                {
+                    <font face="arial" style="position: absolute;  bottom:-36px; left:1520px; color:yellow; font-size:15px;"><b>@Account.username  </b></font>
+                }
+
+
+                <img src="~/Content/Images/Image_Black.jpg" width="300" height="40" style="border:1.75px solid #fff; z-index:-1; opacity:0.5; position:absolute; bottom:-50px; left:1440px" />
+
+                using (Html.BeginForm("Logout", "Home"))
+                {
+                    <button class="zoom" style="position:absolute;
+                            bottom:-40px;
+                            left:1640px;
+                            border:1.75px solid #fff;
+                            background-color:#131320;
+                            color:white;
+                            width:96px;
+                            height:24px;
+                            z-index:2">
+                        Log out
+                    </button>
+                }
+            }
+
+
+
+            @using (Html.BeginForm("Home", "Home"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Home
+                </button>
+            }
+
+            @using (Html.BeginForm("About", "About"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    About
+                </button>
+            }
+
+            @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+            {
+                <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                    <button id="projectsBotton"
+                            name="Project"
+                            value="Projects"
+                            style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                        Projects
+                    </button>
+
+                    <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                        <button name="Project"
+                                value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">JustJump</font>
+                        </button>
+
+                        <button name="Project"
+                                value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">TheWalls</font>
+                        </button>
+
+                        <button name="Project"
+                                value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">EndlessFire</font>
+                        </button>
+
+                        <button name="Project"
+                                value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">TheBean</font>
+                        </button>
+
+                        <button name="Project"
+                                value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">LevelDesign</font>
+                        </button>
+                    </div>
+                </div>
+            }
+
+            @using (Html.BeginForm("Contact", "Contact"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Contact
+                </button>
+            }
+
+            @using (Html.BeginForm("Media", "Media"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Media
+                </button>
+            }
+
+            @using (Html.BeginForm("Download", "Download"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Downloads
+                </button>
+            }
+
+            <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+        </div>
+
+
+        <div align="center" style="position:relative">
+
+            <div style="width:1000px; height:400px; position:absolute; left:15px; bottom:-415px; overflow:hidden; white-space:nowrap">
+                <div class="textHomeAnimation" style="position: absolute;">
+                    <font color="white" face="arial" style="font-size:50px; position:absolute; left:0px;">
+                        <b>
+                            ◉ Game development in Unity
+                        </b>
+                    </font>
+                    <font color="white" face="arial" style="font-size:50px; position:absolute; left:-1100px;">
+                        <b>
+                            ◉ Programming in C#, using VisualStudio
+                        </b>
+                    </font>
+                    <font color="white" face="arial" style="font-size:50px; position:absolute; left:-2200px;">
+                        <b>
+                            ◉ 3D modelling in Blender
+                        </b>
+                    </font>
+                    <font color="white" face="arial" style="font-size:50px; position:absolute; left:-3300px;">
+                        <b>
+                            ◉ UI and textures in Krita
+                        </b>
+                    </font>
+                </div>
+            </div>
+
+            <hr color="#ffffff" style="position:absolute; height:5px; width:1000px; left:10px; bottom:-95px" />
+
+
+            <video width="1280" height="720" loop="loop" autoplay="autoplay" style="opacity:0.85; border:3px solid #ffffff; position:absolute; bottom:-850px; left:10px">
+                <source src="~/Content/HomeVideo.mp4" type="video/mp4">
+            </video>
+
+
+            <img src="~/Content/Images/Logo.jpg" width="480" height="480" style="position:absolute; left:1400px; z-index:-2;" />
+
+
+            <font style="position: absolute; font-size: 50px; color: white; top: 950px; font-family: Arial; left: 50px; padding-bottom: 1000px;">
+                <u>NightmareStudio: Blog</u>
+            </font>
+
+
+
+            <div style="position:relative; top:0px">
+
+                <div style="position: absolute; background-color: black; opacity:0.7; width: 1000px; height: 600px; top: 1100px; left: 35px; z-index: -1; "></div>
+
+                <font style="position: absolute; font-size: 25px; color: white; top: 1100px; font-family: Arial; left: 50px;">
+                    + New things added for the next update (The Bean 0.3 beta): high explosive grenades!
+
+                    <br /><br />
+
+                    <font style="position: absolute; font-size: 20px; left: 0px  ">
+                        HE grenades is an item that can be found on the map and used to kill enemies.
+                    </font>
+                </font>
+
+                <iframe style="position: absolute; height: 480px; width: 960px; top: 1200px; left: 50px; " src="https://www.youtube.com/embed/s9FaFLX4bqg"></iframe>
+            </div>
+
+
+            <div style="position: relative; top: 700px">
+
+                <div style="position: absolute; background-color: black; opacity:0.7; width: 1000px; height: 600px; top: 1100px; left: 35px; z-index: -1; "></div>
+
+                <font style="position: absolute; font-size: 25px; color: white; top: 1100px; font-family: Arial; left: 50px;">
+                    + New things added for the next update (The Bean 0.3 beta): Jump enemy!
+
+                    <br /><br />
+
+                    <font style="position: absolute; font-size: 20px; left: 0px  ">
+                        Jump enemy is the only enemy that has the ability to jump.
+                    </font>
+                </font>
+
+                <iframe style="position: absolute; height: 480px; width: 960px; top: 1200px; left: 50px; " src="https://www.youtube.com/embed/WiUWbi1AHt8"></iframe>
+            </div>
+
+        </div>
+      
+    </body>
+
+</html>

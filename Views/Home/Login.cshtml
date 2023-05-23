@@ -1,0 +1,78 @@
+﻿@model Model.Account
+@using Model
+
+<html>
+
+    <head>
+        <title>NightmareStudio Login</title>
+        <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+    </head>
+
+
+    <body background="\Content\Images\Background.jpg" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+
+        <script>
+
+        </script>
+
+        <style>
+
+
+        </style>
+
+        <div style="position:relative;">
+
+            <img src="~/Content/Images/Image_Black.jpg" width="500" height="750" style="border:2px solid #fff; opacity:0.7; position:absolute; left:675px; bottom:-825px" />
+            <font face="arial" style="position: absolute; bottom:-150px; left:860px; color:white; font-size:40px;"><b>Log in</b></font>
+
+
+            @using (Html.BeginForm("Loging", "Home", FormMethod.Post))
+            {
+                <button style="position:absolute;
+                        bottom:-500px;
+                        left:780px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:275px;
+                        height:50px;
+                        ">
+                    <font face="arial" style="font-size:25px">Login</font>
+                </button>
+
+                @Html.TextBoxFor(m => m.username_, new { @class = "usernameLogin_input" })
+                @Html.TextBoxFor(m => m.password_, new { @class = "passwordLogin_input" })
+            }
+
+            @using (Html.BeginForm("Home", "Home"))
+            {
+                <button style="position:absolute;
+                        bottom:-750px;
+                        left:780px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:275px;
+                        height:50px;
+                        ">
+                    <font face="arial" style="font-size:25px">Home</font>
+                </button>
+            }
+
+
+            <font face="arial" style="position: absolute; bottom:-215px; left:860px; color:white; font-size:25px;"><b>Username</b></font>
+
+            <font face="arial" style="position: absolute; bottom:-315px; left:860px; color:white; font-size:25px;"><b>Password</b></font>
+
+            @{
+                if (Account.loginError)
+                {
+                    <font face="arial" style="position: absolute; bottom:-400px; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center; color:red; font-size:25px;"><b>Error: Wrong username or password</b></font>
+                }
+            }
+
+        </div>
+
+    </body>
+
+</html>

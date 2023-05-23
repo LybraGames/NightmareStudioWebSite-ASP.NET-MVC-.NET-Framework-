@@ -1,0 +1,261 @@
+﻿<html>
+
+<head>
+    <title>
+        NightmareStudio - JustJump!
+    </title>
+
+     <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+    <style>
+
+      
+
+    </style>
+</head>
+
+<body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+    <script>
+
+        var index = 0;
+        var texts = ["JustJump! (v2.0) - 2020", "JustJump! (v2.0) - 2020",
+            "JustJump! (v1.5) - 2019", "JustJump!(v1.5) - 2019", "JustJump!(v1.5) - 2019", "JustJump!(v1.5) - 2019",
+            "JustJump! (beta) - 2018", "JustJump! (beta) - 2018", "JustJump! (beta) - 2018", "JustJump! (beta) - 2018", "JustJump! (beta) - 2018", "JustJump! (beta) - 2018", "JustJump! (beta) - 2018",
+            "JustJump! (first version) - 2018", "JustJump! (first version) - 2018"];
+
+        function Start() {
+            //showSlide(0);
+        }
+
+        function showSlide(slide) {
+
+            var slides = document.getElementsByClassName("slide");
+            var text = document.getElementById("text");
+
+            index += slide;
+
+            if (index >= 0 && index < slides.length) {
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slides[index].style.display = "block";
+                text.innerText = texts[index];
+            } else {
+                index -= slide;
+            }
+        }
+
+    </script>
+
+    <div style="position:relative;">
+        <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Home
+            </button>
+        }
+
+        @using (Html.BeginForm("About", "About"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                About
+            </button>
+        }
+
+        @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+        {
+            <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                <button id="projectsBotton"
+                        name="Project"
+                        value="Projects"
+                        style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                    Projects
+                </button>
+
+                <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                    <button name="Project"
+                            value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">JustJump</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheWalls</font>
+                    </button>
+
+                    <button name="Project"
+                            value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">EndlessFire</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheBean</font>
+                    </button>
+
+                    <button name="Project"
+                            value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">LevelDesign</font>
+                    </button>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Contact", "Contact"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Contact
+            </button>
+        }
+
+        @using (Html.BeginForm("Media", "Media"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Media
+            </button>
+        }
+
+        @using (Html.BeginForm("Download", "Download"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Downloads
+            </button>
+        }
+
+        <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+    </div>
+
+
+    <div align="center" style="position:relative">
+
+        @*Projects*@
+
+        <div style="position:absolute; bottom:50px">
+
+            @*Project name*@
+            <font face="arial" color="#ffffff" style="font-size:45px; bottom:-200px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                <b>
+                    &emsp; JustJump!
+                </b>
+            </font>
+
+            @*Project description*@
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-650px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;Just Jump! is a simple 3D mobile game with low poly graphics, from the category of arcade games. In this game you have to jump with a cube on different platforms until the end of the level.
+                The game has over 75 levels and many skins for your cube. The levels are short and simple, some of them being special. With the pennies and precious stones collected you can buy chests and skins for your cube.
+                The game consumes few resources (works on weak phones) and takes up little storage space.
+
+                <br>
+                &emsp;The game is free, official, and can be downloaded from the Play Store:
+                <a href="https://play.google.com/store/apps/details?id=com.Lybra.JustJump" target="_blank" style="color:white; text-decoration:none"><b>JustJump! - PlayStore</b></a>
+                <br>
+
+                <ul style="list-style-type:circle">
+                    <li>Version: 2.2</li>
+                    <li>Age: PEGI 3</li>
+                    <li>Category: Arcade</li>
+                    <li>Reviews: 4,9/5,0</li>
+                    <li>Downloads: 448</li>
+                    <li>Android version: 4.4 - the newest</li>
+                    <li>Size: 39MB</li>
+                    <li>Last update: 15.5.2020 </li>
+                    <li>Release date: 21.12.2018 (version: 1.0)</li>
+                    <li>Project status: ended (there will be no more updates)</li>
+                    <li>Game status: released,official</li>
+                </ul>
+            </font>
+
+            @*Project images*@
+
+        <div style="position:absolute; width:875px; height:500px; bottom:-627.5px; left:1020px; text-align:center;">
+
+            <div style="position:absolute; background-color:white; opacity:0.2; width:875px; height:500px; bottom:0px; left:0px; text-align:center;"></div>
+
+            <div style="position:absolute; width:500px; height:500px; z-index:2; left:0px; right:0px; margin-left:auto; margin-right:auto;
+                bottom:0px; top:0px; margin-top:auto; margin-bottom:auto; text-align:center;">
+
+                <img class="slide" align="middle" src="~/Content/Images/JustJump14.jpg" style="display: block"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump15.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump1.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump2.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump3.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump4.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump10.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump11.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump12.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump13.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump7.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump8.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump9.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump5.jpg" style="display: none"/>
+                <img class="slide" align="middle" src="~/Content/Images/JustJump6.jpg" style="display: none"/>
+
+                <font id="text" color="black" face="arial" size="5" style="position:absolute; font-weight: bold; text-align:center; left:0px; right:0px; margin-left:auto; margin-right:auto; bottom:10px;">
+                    JustJump! (v2.0) - 2020
+                </font>
+
+            </div>
+
+            <input type="image" src="~/Content/Images/arrow.png" 
+                   onclick="showSlide(1)" 
+                   style="position:absolute; outline:none; width:50px; height:50px; z-index:4;  left:-800px; right:0px; margin-left:auto; margin-right:auto; bottom:0px; top:0px; margin-bottom:auto; margin-top:auto;"/>
+
+            <input type="image" src="~/Content/Images/arrow.png" 
+                   onclick="showSlide(-1)" 
+                   style="position:absolute; outline:none; transform:scale(-1);  width:50px; height:50px; z-index:4;  left:0px; right:-800px; margin-left:auto; margin-right:auto; bottom:0px; top:0px; margin-bottom:auto; margin-top:auto;"/>
+
+        </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

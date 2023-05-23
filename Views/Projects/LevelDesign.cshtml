@@ -1,0 +1,315 @@
+﻿<html>
+
+<head>
+    <title>
+        NightmareStudio - Level design
+    </title>
+
+    <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+    <style>
+        #levelDesignTitle {
+        }
+    </style>
+</head>
+
+<body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+    <script>
+
+        function Start() {
+            slides = document.getElementsByClassName("levelDesignSlide");
+        }
+
+        var index = 0;
+        var projectIndex = 0;
+        var projects = ["forest", "hill", "house", "landscape", "temple", "village"];
+        var projectsTitles = ["Forest", "Hill", "House", "Landscape", "Temple", "Village"];
+        var slides;
+
+        function changeProjectIndex(i)
+        {
+            projectIndex = i;
+
+            var title = projectsTitles[projectIndex];
+
+            document.getElementById("levelDesignTitle").innerHTML = title;
+            slides[0].src = "../Content/Images/" + projects[projectIndex] + 1 + ".jpg";
+            index = 0;
+        }
+
+        function showSlide(slide)
+        {
+            slides = document.getElementsByClassName("levelDesignSlide");
+
+            index += slide;
+
+            if (index >= 0)
+            {
+                try {
+                    slides[0].src = "../Content/Images/" + projects[projectIndex] + (index + 1) + ".jpg";
+                }
+                catch (error) {
+                    index -= 1;
+                }
+            }
+            else
+            {
+                index -= slide;
+            }
+        }
+
+
+    </script>
+
+    <div style="position:relative;">
+        <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Home
+            </button>
+        }
+
+        @using (Html.BeginForm("About", "About"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                About
+            </button>
+        }
+
+        @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+        {
+            <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                <button id="projectsBotton"
+                        name="Project"
+                        value="Projects"
+                        style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                    Projects
+                </button>
+
+                <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                    <button name="Project"
+                            value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">JustJump</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheWalls</font>
+                    </button>
+
+                    <button name="Project"
+                            value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">EndlessFire</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheBean</font>
+                    </button>
+
+                    <button name="Project"
+                            value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">LevelDesign</font>
+                    </button>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Contact", "Contact"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Contact
+            </button>
+        }
+
+        @using (Html.BeginForm("Media", "Media"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Media
+            </button>
+        }
+
+        @using (Html.BeginForm("Download", "Download"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Downloads
+            </button>
+        }
+
+        <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+    </div>
+
+
+    <div style="position:absolute; text-align:center">
+
+        <img src="~/Content/Images/Image_Black.jpg" width="125" height="500" style="border:2px solid #fff; opacity:0.7" />
+   
+        <font face="arial" color="#ffffff" style="font-size:20px; bottom:450px; position:absolute; left: 25px;">
+            Projects
+        </font>
+
+        <button class="zoom" onclick="changeProjectIndex(0)" style="position:absolute;
+                        bottom:125px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            Forest
+        </button>
+
+        <button class="zoom" onclick="changeProjectIndex(1)" style="position:absolute;
+                        bottom:175px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            Hill
+        </button>
+
+        <button class="zoom" onclick="changeProjectIndex(2)" style="position:absolute;
+                        bottom:225px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            House
+        </button>
+
+        <button class="zoom" onclick="changeProjectIndex(3)" style="position:absolute;
+                        bottom:275px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            Landscape
+        </button>
+
+        <button class="zoom" onclick="changeProjectIndex(4)" style="position:absolute;
+                        bottom:325px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            Temple
+        </button>
+
+        <button class="zoom" onclick="changeProjectIndex(5)" style="position:absolute;
+                        bottom:375px;
+                        left: 15px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+            Village
+        </button>
+
+    </div>
+
+    <div align="center" style="position:absolute">
+
+        <font face="arial" color="#ffffff" style="font-size:50px; bottom:-25px; position:absolute; left: 175px; text-align:start;  width:1000px;">
+            <b>
+                &emsp;  ◉ Level design
+            </b>
+        </font>
+
+        <br /><br /><br />
+
+
+        <font face="arial" color="#ffffff" style="font-size:20px; bottom: -200px; position:absolute; left: 200px; text-align:start;  width:1000px;">
+            Level design in Unity 2021.1 (built-in render pipeline) using free assets, Blender, PBR materials,  Book of the Dead Environment, and more.
+            <br />
+            These level designs use features like: Global Illumination (Realtime / Mixed / Baked), PostProcessing, SSR, reflection probes, light probes,
+            Terrarin tools package, PBR materials, Tree component.
+        </font>
+
+        <br /><br /><br />
+
+
+
+        <font face="arial" color="#ffffff" style="font-size:35px; bottom:-350px; position:absolute; left: 150px; text-align:center;  width:1000px;">
+            &emsp; 
+            <u>
+                <b id="levelDesignTitle">
+                     Forest
+                </b>
+            <u/>
+        </font>
+
+        <br /><br />
+
+
+
+        <div style="position: absolute; background-color: white; width: 1120px; height: 560px; bottom: -960px; left: 120px; opacity: .25 ">  </div>
+
+        <img class="levelDesignSlide" src="~/Content/Images/forest1.jpg" width="960" height ="540" style=" border: 1px solid #ffffff; position: absolute; bottom: -950px; left: 200px; display: block " />
+
+        <img onclick="showSlide(-1)" src="~/Content/Images/arrow.png" width="50" height="50" style="position: absolute; bottom: -712.5px; left: 140px; " />
+        <img onclick="showSlide(1) " src="~/Content/Images/arrow.png" width="50" height="50" style="position: absolute; bottom: -712.5px; left: 1170px; transform: scaleX(-1);" />
+
+    </div>
+
+    <div align="center" style="position:relative">
+        <hr color="#ffffff" style="height:4px; width:100%; position:relative; bottom:-1250px;" />
+    </div>
+
+
+</body>
+
+</html>

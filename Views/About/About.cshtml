@@ -1,0 +1,183 @@
+﻿<html>
+
+    <head>
+        <title>
+            NightmareStudio - About
+        </title>
+
+       <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+        <script>
+
+            function Start() {
+              
+            }
+
+        </script>
+
+        <div style="position:relative;">
+            <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+            @using (Html.BeginForm("Home", "Home"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Home
+                </button>
+            }
+
+            @using (Html.BeginForm("About", "About"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    About
+                </button>
+            }
+
+            @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+            {
+                <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                    <button id="projectsBotton"
+                            name="Project"
+                            value="Projects"
+                            style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                        Projects
+                    </button>
+
+                    <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                        <button name="Project"
+                                value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">JustJump</font>
+                        </button>
+
+                        <button name="Project"
+                                value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">TheWalls</font>
+                        </button>
+
+                        <button name="Project"
+                                value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">EndlessFire</font>
+                        </button>
+
+                        <button name="Project"
+                                value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">TheBean</font>
+                        </button>
+
+                        <button name="Project"
+                                value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                            <font style="font-size:12px">LevelDesign</font>
+                        </button>
+                    </div>
+                </div>
+            }
+
+            @using (Html.BeginForm("Contact", "Contact"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Contact
+                </button>
+            }
+
+            @using (Html.BeginForm("Media", "Media"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Media
+                </button>
+            }
+
+            @using (Html.BeginForm("Download", "Download"))
+            {
+                <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                    Downloads
+                </button>
+            }
+
+            <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+        </div>
+
+
+        <div align="center" style="position:relative">
+
+            <font color="white" face="arial" style="font-size:50px; position:absolute; left:15px; bottom:-75px;">
+                <b>
+                    ◉ About
+                </b>
+            </font>
+
+            <hr color="#ffffff" style="position:absolute; height:5px; width:1000px; left:10px; bottom:-95px" />
+
+            <font face="arial" color="#ffffff" style="font-size:20px; bottom:-325px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+                &emsp;Nightmare Studio is a Romanian indie team producing video games from Iasi.Nightmare Studio was founded in 2018 under the name LybraGames (in 2021 it changed its name and logo).
+                The games developed by Nightmare Studio are: for android (phones): TheWalls and JustJump! , for Windows (PC / laptop): EndlessFire and The Bean.<br><br>
+                &emsp;The first two games (TheWalls and JustJump!) were published on MagazinPlay / PlayStore, and the last games (EndlessFire and The Bean) was released on the Itch.io platform.
+                All games were made with the help of special programs and tools: UnityEngine 2018 4.3 & 2021.1.16 (personal / free version), VisualStudio (Community 2019), Krita, Blender (2.8), LMMS,Audacity , NVIDIA CodeWorks for Android.
+            </font>
+
+            <div style="width:865px; height:600px; position:absolute; left:1025px; bottom:-625px; overflow:hidden">
+
+                <div class="imageAboutAnimation" style="position: absolute;">
+                    <img src="~/Content/Images/AboutImage1.jpg" width="854" height="480" style="border:5px solid #ffffff; position:absolute; left:-1025px; bottom:-550px" />
+                    <img src="~/Content/Images/AboutImage2.jpg" width="854" height="480" style="border: 5px solid #ffffff; position: absolute; left: -2025px; bottom: -550px" />
+                    <img src="~/Content/Images/AboutImage3.jpg" width="854" height="480" style="border: 5px solid #ffffff; position: absolute; left: -3025px; bottom: -550px" />
+                    <img src="~/Content/Images/AboutImage4.jpg" width="854" height="480" style="border: 5px solid #ffffff; position: absolute; left: -4025px; bottom: -550px" />
+
+                    <font color="black" face="arial" style="font-size:25px; position:absolute; left:-1000px; bottom:-585px; z-index:2; overflow:visible"> <b> ◉ Level design </b> </font>
+                    <font color="black" face="arial" style="font-size:25px; position:absolute; left:-2000px; bottom:-585px; z-index:2;"> <b> ◉ C# language </b> </font>
+                    <font color="black" face="arial" style="font-size:25px; position:absolute; left:-3000px; bottom:-585px; z-index:2;"> <b> ◉ 3D modelling </b> </font>
+                    <font color="black" face="arial" style="font-size:25px; position:absolute; left:-4000px; bottom:-585px; z-index:2;"> <b> ◉ .NET programming </b> </font>
+                </div>
+            </div>
+
+            <div style="width:864px; height:530px; position:absolute; background-color:white; left:1025px; bottom:-615px; opacity:0.4; z-index:-1"> </div>
+
+        </div>
+
+</body>
+
+</html>

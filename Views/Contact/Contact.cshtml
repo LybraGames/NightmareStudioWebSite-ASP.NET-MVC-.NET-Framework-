@@ -1,0 +1,171 @@
+﻿<html>
+
+<head>
+    <title>
+        NightmareStudio - Contact
+    </title>
+
+    <link href="@Url.Content("~/Style/Style.css")" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body background="\Content\Images\Background.jpg" onload="Start()" style="-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+    <script>
+
+        function Start() {
+
+        }
+
+    </script>
+
+    <div style="position:relative;">
+        <img src="~/Content/Images/Image_Black.jpg" width="1885" height="50" style="border:2px solid #fff; opacity:0.7" />
+        @using (Html.BeginForm("Home", "Home"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:20px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Home
+            </button>
+        }
+
+        @using (Html.BeginForm("About", "About"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:150px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                About
+            </button>
+        }
+
+        @using (Html.BeginForm("Projects", "Projects", FormMethod.Post))
+        {
+            <div style="position:absolute; width: 125px; height:204px;  bottom:-160px; left:268px; overflow:hidden">
+                <button id="projectsBotton"
+                        name="Project"
+                        value="Projects"
+                        style="position: absolute;
+                        bottom: 175px;
+                        left: 12px;
+                        border: 2px solid #fff;
+                        background-color: #131320;
+                        color: white;
+                        width: 100px;
+                        height: 25px;
+                        z-index:2;">
+                    Projects
+                </button>
+
+                <div id="projectsList" style="position:absolute; width:96px; height:170px; z-index:1; left:0px;right:0; margin-left:auto; margin-right:auto; text-align:center;">
+                    <button name="Project"
+                            value="JustJump" style="position: absolute; bottom: 130px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">JustJump</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheWalls" style="position: absolute; bottom: 100px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheWalls</font>
+                    </button>
+
+                    <button name="Project"
+                            value="EndlessFire" style="position: absolute; bottom: 70px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">EndlessFire</font>
+                    </button>
+
+                    <button name="Project"
+                            value="TheBean" style="position: absolute; bottom: 40px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">TheBean</font>
+                    </button>
+
+                    <button name="Project"
+                            value="LevelDesign" style="position: absolute; bottom: 10px; left:5.5px;  border: 1px solid #fff; background-color: #131320; color: white; width: 85px; height: 23px; z-index:3;">
+                        <font style="font-size:12px">LevelDesign</font>
+                    </button>
+                </div>
+            </div>
+        }
+
+        @using (Html.BeginForm("Contact", "Contact"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:410px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Contact
+            </button>
+        }
+
+        @using (Html.BeginForm("Media", "Media"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:540px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Media
+            </button>
+        }
+
+        @using (Html.BeginForm("Download", "Download"))
+        {
+            <button class="zoom" style="position:absolute;
+                        bottom:15px;
+                        left:670px;
+                        border:2px solid #fff;
+                        background-color:#131320;
+                        color:white;
+                        width:100px;
+                        height:25px">
+                Downloads
+            </button>
+        }
+
+        <font face="arial" style="position: absolute; bottom:5px; left:1500px; color:white; font-size:40px;"><b>NightmareStudio</b></font>
+
+    </div>
+
+
+    <div align="center" style="position:relative">
+
+        <font color="white" face="arial" style="font-size:50px; position:absolute; left:15px; bottom:-75px;">
+            <b>
+                ◉ Contact
+            </b>
+        </font>
+
+        <hr color="#ffffff" style="position:absolute; height:5px; width:1000px; left:10px; bottom:-95px" />
+
+        <font face="arial" color="#ffffff" style="font-size:20px; bottom:-300px; position:absolute; left: 10px; text-align:start;  width:1000px;">
+            &emsp;&emsp;&emsp;&emsp;<b>Email:</b> if you want to write me an email, access this link <a href="https://mail.google.com/mail/u/0/?fs=1&to=lybragamescontact@gmail.com&tf=cm" style="color:white">EMAIL</a>
+            <br /><br />
+            &emsp;&emsp;&emsp;&emsp;<b>Discord (username):</b> Kowalski#0484<br /><br />
+            <b>Discord server:</b> Game Development Romania Community is a discord server, created by Kowalski, intended for all game developers in Romania.
+            On this server you can promote your games, assets, projects and videos / live shows on youtube or twitch (related to game development), you can collaborate and help each other.<br />
+        </font>
+
+        <img src="~/Content/Images/gmaillogo.jpg" style="position:absolute; left:10px; bottom:-175px" height="50" width="50" />
+        <img src="~/Content/Images/discordlogo.png" style="position:absolute; transform:scale(0.4); left:-25px; bottom:-260px" height="125" width="125" />
+
+        <iframe src="https://discord.com/widget?id=703757331028246538&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" style="position:absolute; left:25px; bottom:-850px"></iframe>
+        <img src="~/Content/Images/discordserver.jpg" style="position:absolute; left:400px; bottom:-825px" height="480" width="854">
+    </div>
+</body>
+
+</html>
